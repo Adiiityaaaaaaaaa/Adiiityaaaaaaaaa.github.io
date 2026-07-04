@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya Pandey — Software Engineer</title>
+  <meta name="description" content="Software engineer building fintech platforms, Open Banking payments, and AI-powered internal tooling. Portfolio of projects by Aditya Pandey." />
+  <meta property="og:title" content="Aditya Pandey — Software Engineer" />
+  <meta property="og:description" content="Fintech platforms, Open Banking payments, and AI-powered tooling — project portfolio." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236366f1'/%3E%3Ctext x='32' y='42' font-family='Segoe UI,Arial' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EAP%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo">AP<span class="accent">.</span></a>
+      <div class="nav-links">
+        <a href="#journey">Journey</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container">
+      <p class="hero-kicker reveal">Hi, I'm</p>
+      <h1 class="hero-name reveal">Aditya Pandey</h1>
+      <h2 class="hero-title reveal">Software Engineer · Fintech Platforms &amp; AI Tooling</h2>
+      <p class="hero-pitch reveal">
+        I build the systems behind a UK consumer lender — Open&nbsp;Banking payment
+        journeys, customer-facing web apps, and the internal platforms and AI agents
+        that keep operations running. Most of my work lives in proprietary codebases,
+        so this site tells the story the repos can't.
+      </p>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="#projects">View projects</a>
+        <a class="btn btn-ghost" href="mailto:adityapandey241@gmail.com">Get in touch</a>
+      </div>
+      <ul class="hero-chips reveal" aria-label="Core technologies">
+        <li>C# / .NET</li>
+        <li>Python</li>
+        <li>React / TypeScript</li>
+        <li>AI Agents &amp; RAG</li>
+        <li>MongoDB</li>
+        <li>Docker · CI/CD</li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================= JOURNEY ======================= -->
+    <section class="section" id="journey">
+      <div class="container">
+        <h2 class="section-title reveal">Two stories my projects tell</h2>
+        <p class="section-sub reveal">
+          I don't just ship one-off tools — I evolve them. Two threads run through my
+          work: automating a support desk until it became an AI agent, and growing a
+          build script into a full CI/CD platform.
+        </p>
+
+        <div class="arc reveal">
+          <h3 class="arc-title">01 · From ticket queue to AI agent</h3>
+          <div class="arc-steps">
+            <div class="arc-step">
+              <span class="arc-step-label">BatBot</span>
+              <p>Python CLI that processed service-desk tickets and automated bulk
+                 back-office actions against the lending platform.</p>
+              <span class="arc-tech">Python · Jira API · MongoDB</span>
+            </div>
+            <div class="arc-arrow" aria-hidden="true">→</div>
+            <div class="arc-step">
+              <span class="arc-step-label">BatBotUI</span>
+              <p>Streamlit dashboard that AI-categorises incoming tickets, enriches
+                 them from internal systems, and auto-resolves whole ticket classes.</p>
+              <span class="arc-tech">Streamlit · GPT-4o-mini · OAuth2 PKCE</span>
+            </div>
+            <div class="arc-arrow" aria-hidden="true">→</div>
+            <div class="arc-step">
+              <span class="arc-step-label">CTSD-Agent</span>
+              <p>Claude-powered tool-using agent with RAG over the codebase and past
+                 tickets — every action gated by human-in-the-loop approval.</p>
+              <span class="arc-tech">Claude · RAG / Qdrant · FastAPI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="arc reveal">
+          <h3 class="arc-title">02 · From build script to CI/CD platform</h3>
+          <div class="arc-steps">
+            <div class="arc-step">
+              <span class="arc-step-label">LocalCI</span>
+              <p>Python tool that builds services locally and pushes Docker images,
+                 packages and Helm charts — bypassing slow hosted CI.</p>
+              <span class="arc-tech">Python · Docker · GCR · Helm</span>
+            </div>
+            <div class="arc-arrow" aria-hidden="true">→</div>
+            <div class="arc-step">
+              <span class="arc-step-label">Octopus Deployer</span>
+              <p>Companion CLI that finds a release, deploys it to an environment and
+                 tails deployment status — build and deploy as two commands.</p>
+              <span class="arc-tech">Python · Octopus Deploy API</span>
+            </div>
+            <div class="arc-arrow" aria-hidden="true">→</div>
+            <div class="arc-step">
+              <span class="arc-step-label">SequensisCI</span>
+              <p>Self-hosted CI platform: containerised builds, live log streaming,
+                 artifact publishing, and its own MCP server — used across the team.</p>
+              <span class="arc-tech">Blazor Server · CQRS/DDD · MongoDB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= PROJECTS ======================= -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title reveal">Projects</h2>
+        <p class="section-sub reveal">
+          Professional projects are proprietary, so they're presented as case
+          studies — what I built, how, and why it mattered.
+        </p>
+
+        <div class="filters reveal" role="group" aria-label="Filter projects">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="ai">AI &amp; Agents</button>
+          <button class="filter" data-filter="platform">Platform &amp; DevOps</button>
+          <button class="filter" data-filter="product">Product &amp; Payments</button>
+          <button class="filter" data-filter="personal">Personal</button>
+        </div>
+
+        <div class="grid">
+
+          <article class="card reveal" data-tags="platform">
+            <div class="card-top">
+              <h3>SequensisCI</h3>
+              <span class="badge badge-work">Professional</span>
+            </div>
+            <p class="card-lead">Self-hosted CI/CD platform that replaced slow hosted builds for a whole engineering team.</p>
+            <ul class="card-points">
+              <li>Blazor Server app that clones repos, runs containerised builds and streams live logs</li>
+              <li>Publishes Docker images, NuGet packages and Helm charts from one pipeline</li>
+              <li>CQRS + DDD architecture over MongoDB; parallelised .NET and JS builds to cut build time</li>
+              <li>Exposes its own MCP server so AI assistants can trigger and monitor builds</li>
+            </ul>
+            <div class="chips">
+              <span>C# / .NET</span><span>Blazor Server</span><span>CQRS · DDD</span><span>MongoDB</span><span>Docker</span><span>Helm</span><span>MCP</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="ai">
+            <div class="card-top">
+              <h3>CTSD-Agent</h3>
+              <span class="badge badge-work">Professional</span>
+            </div>
+            <p class="card-lead">Agentic successor to BatBot: a Claude-powered agent that resolves support tickets with a human in the loop.</p>
+            <ul class="card-points">
+              <li>Tool-using Claude agent that investigates and actions Jira support tickets</li>
+              <li>RAG over the company codebase and historical resolved tickets (Qdrant + embeddings)</li>
+              <li>Per-step human approval before any mutation — safe automation by design</li>
+              <li>FastAPI backend with NiceGUI frontend, fully Dockerised</li>
+            </ul>
+            <div class="chips">
+              <span>Python</span><span>Claude API</span><span>RAG</span><span>Qdrant</span><span>FastAPI</span><span>Docker</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="ai">
+            <div class="card-top">
+              <h3>BatBot &amp; BatBotUI</h3>
+              <span class="badge badge-work">Professional</span>
+            </div>
+            <p class="card-lead">AI-assisted support-desk automation: from a Python CLI to a Streamlit dashboard the support team uses daily.</p>
+            <ul class="card-points">
+              <li>Fetches unassigned tickets, AI-categorises them and enriches from internal systems</li>
+              <li>Auto-processes whole ticket classes: login issues, reconnects, welcome letters</li>
+              <li>Six-scenario login diagnosis engine; bulk actions run 10-at-a-time in parallel</li>
+              <li>Azure B2C OAuth2 PKCE login; SOCKS-proxied MongoDB access</li>
+            </ul>
+            <div class="chips">
+              <span>Python</span><span>Streamlit</span><span>OpenAI</span><span>Jira API</span><span>MongoDB</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="product">
+            <div class="card-top">
+              <h3>Open Banking VRP Platform</h3>
+              <span class="badge badge-work">Professional</span>
+            </div>
+            <p class="card-lead">Variable Recurring Payments across a microservice lending platform — consent, acquisition, collection and disbursal.</p>
+            <ul class="card-points">
+              <li>Feature work spanning account management, application and payment-plan services</li>
+              <li>Domain-Driven Design with CQRS and versioned integration events</li>
+              <li>Built consent-lookup repositories, V2 disbursal events and payment-collection jobs</li>
+              <li>Traced and documented the full VRP acquisition journey for the wider team</li>
+            </ul>
+            <div class="chips">
+              <span>C# / .NET</span><span>DDD · CQRS</span><span>Open Banking</span><span>MongoDB</span><span>Event-driven</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="product ai">
+            <div class="card-top">
+              <h3>WhatsApp Customer Servicing</h3>
+              <span class="badge badge-work">Professional</span>
+            </div>
+            <p class="card-lead">Two-sided WhatsApp platform: a .NET messenger microservice plus a React servicing hub for agents.</p>
+            <ul class="card-points">
+              <li>.NET microservice handling WhatsApp send/receive with webhook integration</li>
+              <li>React/TypeScript servicing hub with real-time updates over SignalR</li>
+              <li>Prototyped an LLM layer for the servicing bot using Ollama and OpenAI</li>
+              <li>MongoDB persistence with cloud object storage for media</li>
+            </ul>
+            <div class="chips">
+              <span>C# / .NET</span><span>React · TS</span><span>SignalR</span><span>WhatsApp API</span><span>Ollama</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="product">
+            <div class="card-top">
+              <h3>Loan Application Journey</h3>
+              <span class="badge badge-work">Professional</span>
+            </div>
+            <p class="card-lead">The customer-facing web app where borrowers apply for loans — including the Open Banking payment-setup screens.</p>
+            <ul class="card-points">
+              <li>React + TypeScript SPA with backend-driven (HATEOAS-style) screen navigation</li>
+              <li>Built and debugged the VRP payment setup and confirmation flows</li>
+              <li>Form-heavy UX: react-hook-form + yup validation, UK bank-account checking</li>
+              <li>Production app with CI, mock-API dev mode and full test tooling</li>
+            </ul>
+            <div class="chips">
+              <span>React</span><span>TypeScript</span><span>Vite</span><span>styled-components</span><span>react-query</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="ai platform">
+            <div class="card-top">
+              <h3>Loan Journey MCP Server</h3>
+              <span class="badge badge-work">Professional</span>
+            </div>
+            <p class="card-lead">Prototype that exposes the loan-application journey to AI assistants — an MCP server and OpenAPI layer powering a "Loan Advisor" GPT.</p>
+            <ul class="card-points">
+              <li>FastAPI wrapper describing 14 journey endpoints via OpenAPI</li>
+              <li>Custom GPT integration that walks a user through an application to a live offer</li>
+              <li>End-to-end journey test harnesses for direct and VRP application flows</li>
+            </ul>
+            <div class="chips">
+              <span>Python</span><span>MCP</span><span>FastAPI</span><span>OpenAPI</span><span>Custom GPT</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="platform">
+            <div class="card-top">
+              <h3>LocalCI + Octopus Deployer</h3>
+              <span class="badge badge-work">Professional</span>
+            </div>
+            <p class="card-lead">Developer toolchain that turned "wait for hosted CI" into two local commands: build-and-push, then deploy.</p>
+            <ul class="card-points">
+              <li>Auto-derives image names and tags from project files, branch and commit history</li>
+              <li>Pushes Docker images to GCR, packages to private feeds, charts to Helm repos</li>
+              <li>Deploy CLI with partial-name release matching and live status tailing</li>
+              <li>Later absorbed into SequensisCI as its build runner</li>
+            </ul>
+            <div class="chips">
+              <span>Python</span><span>Docker</span><span>GCR</span><span>Helm</span><span>Octopus Deploy</span>
+            </div>
+          </article>
+
+          <article class="card reveal" data-tags="personal">
+            <div class="card-top">
+              <h3>Space Shooter</h3>
+              <span class="badge badge-personal">Personal</span>
+            </div>
+            <p class="card-lead">A complete, playable arcade shooter written in an evening — physics-based movement and all.</p>
+            <ul class="card-points">
+              <li>Acceleration, friction and max-speed player physics; fire-rate-limited bullets</li>
+              <li>Enemies spawn off-screen with drift, rotation and gravity-style falling</li>
+              <li>Alpha-blended game-over overlay with restart/quit flow</li>
+            </ul>
+            <div class="chips">
+              <span>Python</span><span>Pygame</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= SKILLS ======================= -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title reveal">Skills</h2>
+        <div class="skills reveal">
+          <div class="skill-group">
+            <h3>Languages</h3>
+            <div class="chips"><span>C#</span><span>Python</span><span>TypeScript</span><span>JavaScript</span><span>SQL</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Backend &amp; Architecture</h3>
+            <div class="chips"><span>.NET / ASP.NET Core</span><span>DDD &amp; CQRS</span><span>Event-driven microservices</span><span>FastAPI</span><span>Flask</span><span>REST / OpenAPI</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <div class="chips"><span>React</span><span>Blazor Server</span><span>Vite</span><span>styled-components</span><span>Streamlit</span><span>SignalR</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>AI &amp; Agents</h3>
+            <div class="chips"><span>Claude API · tool use</span><span>OpenAI</span><span>RAG (Qdrant)</span><span>MCP servers</span><span>Ollama</span><span>Human-in-the-loop design</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Data &amp; Infrastructure</h3>
+            <div class="chips"><span>MongoDB</span><span>Redis</span><span>Docker</span><span>Helm / Kubernetes</span><span>Google Cloud</span><span>CI/CD (AppVeyor, Octopus)</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Domain</h3>
+            <div class="chips"><span>Consumer lending</span><span>Open Banking / VRP</span><span>Payments</span><span>Ops automation</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= CONTACT ======================= -->
+    <section class="section" id="contact">
+      <div class="container contact-box reveal">
+        <h2 class="section-title">Let's talk</h2>
+        <p class="section-sub">
+          Currently a software engineer at Oakbrook Finance (UK consumer lending).
+          Open to interesting conversations — the fastest way to reach me is email.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:adityapandey241@gmail.com">adityapandey241@gmail.com</a>
+          <!-- TODO: replace # with real profile URLs -->
+          <a class="btn btn-ghost" href="#" data-todo="github">GitHub</a>
+          <a class="btn btn-ghost" href="#" data-todo="linkedin">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Aditya Pandey · Built by hand, hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
