@@ -4,11 +4,11 @@
 <meta charset="UTF-8" />
 <title>Aditya Pandey — Resume</title>
 <style>
-  @page { size: A4; margin: 13mm 15mm; }
+  @page { size: A4; margin: 11mm 14mm; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 9.6pt; line-height: 1.42; color: #1a1a1a;
+    font-size: 9.4pt; line-height: 1.38; color: #1a1a1a;
   }
   h1 { font-size: 21pt; font-weight: 700; text-align: center; letter-spacing: 0.5px; }
   .subtitle { text-align: center; font-size: 10.5pt; color: #444; margin-top: 2pt; }
@@ -19,7 +19,7 @@
   .contact a { color: #1a4d8f; text-decoration: none; }
   h2 {
     font-size: 10.5pt; letter-spacing: 1.2px; text-transform: uppercase;
-    color: #333; margin: 11pt 0 4pt; padding-bottom: 2pt;
+    color: #333; margin: 9pt 0 3pt; padding-bottom: 2pt;
     border-bottom: 0.75px solid #999;
   }
   h3 { font-size: 10pt; margin: 7pt 0 2pt; color: #222; }
@@ -76,10 +76,10 @@ global technology organizations.</p>
       months using .NET Core, React.js, TypeScript, WebSockets, and SignalR.</li>
   <li>Architected backend APIs, frontend UI, and real-time communication workflows for production scale and high reliability.</li>
   <li>Integrated a production-grade AI chatbot using OpenAI APIs, actively handling live customer queries in production.</li>
-  <li>Delivered Open Banking Variable Recurring Payments (VRP) features across DDD/CQRS microservices — consent
-      management, payment collection jobs, and versioned integration events.</li>
-  <li>Built a self-hosted CI/CD platform (Blazor Server, Docker, Helm) that replaced slow hosted builds for the team,
-      with live log streaming and an MCP server for AI-assisted operations.</li>
+  <li>Drove the Open Banking VRP epic across three DDD/CQRS microservices — consent journeys, scheduled collection
+      engine, HMAC-verified Modulr payment webhooks — plus the GoCardless direct-debit integration and bulk mandate import.</li>
+  <li>Built a self-hosted CI/CD platform (.NET build engine + React/Vite SPA, Docker, Helm) that replaced hosted builds
+      for the team, with SSE live logs, PR merge-preview builds and an MCP server for AI-assisted operations.</li>
   <li>Built AI support-desk tooling: GPT-powered ticket triage with auto-resolution, and a Claude-based agent using
       RAG over the codebase and ticket history with human-in-the-loop approvals.</li>
   <li>Designed authentication, authorization, logging, analytics, and monitoring systems to ensure security and observability.</li>
@@ -107,23 +107,35 @@ global technology organizations.</p>
 <ul class="proj">
   <li><strong>WhatsApp Customer Communication Platform</strong> — Full-stack real-time messaging platform (.NET Core,
       React/TypeScript, SignalR, MongoDB, GCP) with a production OpenAI chatbot and live agent handoff; delivered in under 2 months.</li>
-  <li><strong>SequensisCI — Self-Hosted CI/CD Platform</strong> — Blazor Server platform running containerised builds with
-      live log streaming; publishes Docker images, NuGet packages and Helm charts; CQRS/DDD over MongoDB; parallelised
-      .NET and JS builds; exposes an MCP server so AI assistants can trigger and monitor builds.</li>
+  <li><strong>SequensisCI — Self-Hosted CI/CD Platform</strong> — 200+ commits: a self-contained .NET build engine
+      (builds .NET/JS/R, publishes Docker/NuGet/Helm) under a React + Vite SPA with live logs over SSE; PR merge-preview
+      builds, HMAC Bitbucket webhooks, atomic build versioning, Entra SSO, multi-replica scale-out with shared caches,
+      and an MCP server so AI assistants can trigger and monitor builds.</li>
   <li><strong>CTSD-Agent — AI Support Agent</strong> — Claude-powered tool-using agent that investigates and resolves
       support tickets using RAG (Qdrant + embeddings) over the codebase and historical tickets, with per-step
       human-in-the-loop approval; FastAPI + NiceGUI, Dockerised.</li>
   <li><strong>BatBot &amp; BatBotUI — AI Ticket Triage</strong> — Streamlit dashboard that AI-categorises Jira support tickets
       (GPT-4o-mini), enriches them from internal systems, and auto-processes whole ticket classes; Azure B2C OAuth2 PKCE;
       bulk back-office automation running 10 actions in parallel.</li>
-  <li><strong>Open Banking VRP Platform</strong> — Variable Recurring Payments across .NET lending microservices: consent
-      lookup repositories, V2 disbursal integration events, scheduled funds-check and payment-collection jobs (DDD, CQRS, MongoDB).</li>
+  <li><strong>Open Banking VRP Platform</strong> — ~300 commits across three .NET microservices: the six-screen consent
+      journey with A/B rollout, a scheduled acquisition-collection engine, Modulr payment webhooks with HMAC verification,
+      temporary-arrangement/suspension lifecycle, and brand-specific contractual documents (DDD, CQRS, MongoDB).</li>
+  <li><strong>GoCardless Direct Debit &amp; Bulk Mandate Import</strong> — HMAC-SHA256 webhook processing rebuilt as
+      CQRS domain events over mandate/payment lifecycles (API as source of truth), plus a Hangfire bulk-import pipeline
+      with per-funder tokens, CMS-based id resolution and DDD batch aggregates.</li>
+  <li><strong>Icenet Bulk Actions Platform</strong> — async job engine turning agreement spreadsheets into thousands of
+      back-office operations: Mongo-queued jobs, drain workers with bounded parallelism, eight action executors, a
+      live-progress React UI, completion emails, and the cross-service Istio policy fix that unblocked it.</li>
+  <li><strong>UtilityService + Link Shortener</strong> — founded a production .NET 8 microservice solo (URL shortener
+      shipped end-to-end in a day), then re-architected it through four phases to platform standard: CQRS/MediatR,
+      OpenTelemetry, typed SDK + Pub/Sub events, and Istio mesh auth.</li>
   <li><strong>Loan Journey MCP Server</strong> — MCP server + FastAPI/OpenAPI layer exposing a 14-endpoint loan application
       journey to AI assistants; powers a "Loan Advisor" Custom GPT that takes a user from first question to a live offer.</li>
   <li><strong>LocalCI + Octopus Deployer</strong> — Python build-and-deploy toolchain: local Docker builds pushed to GCR with
       auto-derived tags, Helm packaging, and a deploy CLI with live status tailing; later absorbed into SequensisCI.</li>
   <li><strong>Loan Application Journey Website</strong> — Production React 17 + TypeScript SPA where borrowers apply for
-      loans; built the Open Banking VRP payment-setup screens within its backend-driven (HATEOAS) navigation.</li>
+      loans; built a fraud-reduction "name on account" prefill/confirm flow and the Open Banking VRP payment-setup
+      screens within its backend-driven (HATEOAS) navigation.</li>
   <li><strong>High-Traffic Sports Platforms</strong> — Contributed to platforms serving 2–3 million concurrent users for F1, UEFA and FEI.</li>
 </ul>
 
@@ -132,11 +144,9 @@ global technology organizations.</p>
 
 <h2>Additional Strengths</h2>
 <ul>
-  <li>Strong debugging, troubleshooting, and problem-solving abilities; high ownership mindset with consistent early delivery</li>
-  <li>Comfortable working across frontend, backend, cloud and AI layers; rapid adoption of new technologies</li>
-  <li>Experience working in high-traffic production environments; strong grasp of scalability, reliability and performance</li>
-  <li>Mentored junior engineers, contributed to code reviews, and experienced integrating third-party APIs and external services</li>
-  <li>Excellent communication and stakeholder management skills</li>
+  <li>Strong debugging and problem-solving; high ownership mindset with consistent early delivery; calm in production incidents</li>
+  <li>Comfortable across frontend, backend, cloud and AI layers in high-traffic production environments; rapid adoption of new technologies</li>
+  <li>Mentored junior engineers, contributed to code reviews; excellent communication and stakeholder management skills</li>
 </ul>
 
 </body>
