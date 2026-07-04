@@ -178,10 +178,102 @@ body {
   html { scroll-behavior: auto; }
 }
 
+/* ============ Scroll progress ============ */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: var(--gradient); z-index: 60;
+}
+
+/* ============ Hero stats ============ */
+.hero-stats {
+  display: flex; flex-wrap: wrap; gap: 34px; margin-top: 38px;
+}
+.stat { display: flex; flex-direction: column; }
+.stat-num {
+  font-size: 1.9rem; font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stat-label { color: var(--muted); font-size: 0.82rem; max-width: 150px; }
+
+/* ============ Card screenshots ============ */
+.card-shot {
+  display: block; width: calc(100% + 52px); margin: -26px -26px 18px;
+  padding: 0; border: none; border-radius: var(--radius) var(--radius) 0 0;
+  overflow: hidden; cursor: zoom-in; background: #0f1524;
+  border-bottom: 1px solid var(--panel-edge);
+}
+.card-shot img {
+  display: block; width: 100%; height: auto;
+  transition: transform 0.3s ease;
+}
+.card-shot:hover img { transform: scale(1.04); }
+.card-more {
+  margin-top: 16px; align-self: flex-start;
+  background: none; border: none; cursor: pointer;
+  color: var(--accent-2); font-family: var(--font); font-size: 0.9rem; font-weight: 600;
+  padding: 0;
+}
+.card-more:hover { text-decoration: underline; }
+.card .chips { margin-top: 4px; }
+
+/* ============ Case-study modal ============ */
+.modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; }
+.modal[hidden] { display: none; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(4, 6, 12, 0.78); backdrop-filter: blur(4px); }
+.modal-panel {
+  position: relative; width: min(760px, calc(100vw - 32px));
+  max-height: calc(100vh - 60px); overflow-y: auto;
+  background: var(--panel); border: 1px solid var(--panel-edge);
+  border-radius: var(--radius); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  animation: modal-in 0.25s ease;
+}
+@keyframes modal-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.modal-close {
+  position: sticky; top: 12px; margin-left: calc(100% - 48px);
+  width: 36px; height: 36px; border-radius: 50%; z-index: 2;
+  background: rgba(11, 15, 26, 0.8); border: 1px solid var(--panel-edge);
+  color: var(--text); font-size: 0.95rem; cursor: pointer;
+}
+.modal-close:hover { border-color: var(--accent); }
+.modal-img { width: 100%; display: block; margin-top: -48px; border-bottom: 1px solid var(--panel-edge); }
+.modal-content { padding: 26px 30px 34px; }
+.modal-content h3 { font-size: 1.4rem; }
+.modal-role { color: var(--accent-2); font-size: 0.92rem; margin: 6px 0 6px; }
+.modal-content h4 {
+  margin: 22px 0 8px; font-size: 0.85rem; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--muted);
+}
+.modal-content p { color: var(--text); font-size: 0.95rem; }
+.modal-content .card-points { margin-bottom: 0; }
+.modal-content .card-points li { color: var(--text); opacity: 0.9; }
+
+/* ============ Experience timeline ============ */
+.timeline { position: relative; margin-top: 10px; padding-left: 26px; }
+.timeline::before {
+  content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px;
+  width: 2px; background: linear-gradient(var(--accent), var(--accent-2));
+  opacity: 0.5;
+}
+.tl-item { position: relative; padding: 0 0 36px 22px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot {
+  position: absolute; left: -26px; top: 5px; width: 14px; height: 14px;
+  border-radius: 50%; background: var(--bg);
+  border: 3px solid var(--accent);
+}
+.tl-head { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; margin-bottom: 10px; }
+.tl-head h3 { font-size: 1.1rem; }
+.tl-date { color: var(--muted); font-size: 0.85rem; }
+.tl-body .card-points { margin-bottom: 14px; }
+
 /* ============ Responsive ============ */
 @media (max-width: 820px) {
   .arc-steps { flex-direction: column; }
   .arc-arrow { transform: rotate(90deg); align-self: flex-start; margin-left: 22px; }
-  .nav-links { gap: 14px; font-size: 0.9rem; }
+  .nav-links { gap: 10px; font-size: 0.85rem; flex-wrap: wrap; justify-content: flex-end; }
   .hero { padding-top: 130px; }
+  .hero-stats { gap: 22px; }
+  .modal-panel { max-height: calc(100vh - 24px); }
 }

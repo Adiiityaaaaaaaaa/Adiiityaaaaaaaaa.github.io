@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="800" height="500" rx="12" fill="#05070f"/>
+  <!-- stars -->
+  <g fill="#e8ecf5" opacity="0.7">
+    <circle cx="80" cy="90" r="1.5"/><circle cx="200" cy="50" r="1"/><circle cx="330" cy="120" r="1.5"/>
+    <circle cx="470" cy="70" r="1"/><circle cx="620" cy="110" r="1.5"/><circle cx="730" cy="60" r="1"/>
+    <circle cx="150" cy="220" r="1"/><circle cx="420" cy="260" r="1.5"/><circle cx="690" cy="240" r="1"/>
+    <circle cx="90" cy="380" r="1.5"/><circle cx="280" cy="430" r="1"/><circle cx="560" cy="400" r="1.5"/>
+  </g>
+
+  <text x="30" y="44" fill="#e8ecf5" font-size="18" font-weight="700">SCORE 1240</text>
+  <text x="770" y="44" fill="#93a0b8" font-size="14" text-anchor="end">♥ ♥ ♥</text>
+
+  <!-- enemies -->
+  <g>
+    <polygon points="240,120 270,150 240,180 210,150" fill="#f87171" transform="rotate(15 240 150)"/>
+    <polygon points="520,90 550,120 520,150 490,120" fill="#f87171" transform="rotate(-24 520 120)"/>
+    <polygon points="660,200 690,230 660,260 630,230" fill="#fb923c" transform="rotate(40 660 230)"/>
+    <polygon points="140,250 170,280 140,310 110,280" fill="#f87171" transform="rotate(-10 140 280)"/>
+  </g>
+
+  <!-- bullets -->
+  <rect x="396" y="210" width="8" height="18" rx="4" fill="#22d3ee"/>
+  <rect x="396" y="150" width="8" height="18" rx="4" fill="#22d3ee" opacity="0.7"/>
+  <rect x="396" y="95" width="8" height="18" rx="4" fill="#22d3ee" opacity="0.4"/>
+
+  <!-- player ship -->
+  <g transform="translate(400 400)">
+    <polygon points="0,-34 24,26 0,12 -24,26" fill="#6366f1"/>
+    <polygon points="0,12 10,26 -10,26" fill="#22d3ee"/>
+    <ellipse cx="0" cy="36" rx="7" ry="12" fill="#fbbf24" opacity="0.8"/>
+  </g>
+
+  <!-- thrust trail -->
+  <ellipse cx="400" cy="460" rx="4" ry="8" fill="#fbbf24" opacity="0.3"/>
+
+  <text x="400" y="485" fill="#93a0b8" font-size="11" text-anchor="middle">←→ move · SPACE fire · physics: acceleration + friction</text>
+</svg>

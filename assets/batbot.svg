@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="800" height="500" rx="12" fill="#0f1524"/>
+  <rect width="800" height="36" rx="12" fill="#1a2338"/>
+  <rect y="24" width="800" height="12" fill="#1a2338"/>
+  <circle cx="22" cy="18" r="5" fill="#f87171"/><circle cx="40" cy="18" r="5" fill="#fbbf24"/><circle cx="58" cy="18" r="5" fill="#34d399"/>
+  <text x="400" y="23" fill="#93a0b8" font-size="12" text-anchor="middle">BatBot — Support Desk Dashboard</text>
+
+  <!-- stat tiles -->
+  <g>
+    <rect x="20" y="56" width="180" height="80" rx="10" fill="#141b2e" stroke="#1f2940"/>
+    <text x="36" y="84" fill="#93a0b8" font-size="11">UNASSIGNED</text>
+    <text x="36" y="118" fill="#e8ecf5" font-size="28" font-weight="800">24</text>
+  </g>
+  <g>
+    <rect x="212" y="56" width="180" height="80" rx="10" fill="#141b2e" stroke="#1f2940"/>
+    <text x="228" y="84" fill="#93a0b8" font-size="11">AUTO-RESOLVED TODAY</text>
+    <text x="228" y="118" fill="#34d399" font-size="28" font-weight="800">11</text>
+  </g>
+  <g>
+    <rect x="404" y="56" width="180" height="80" rx="10" fill="#141b2e" stroke="#1f2940"/>
+    <text x="420" y="84" fill="#93a0b8" font-size="11">NEEDS AN AGENT</text>
+    <text x="420" y="118" fill="#fbbf24" font-size="28" font-weight="800">6</text>
+  </g>
+  <g>
+    <rect x="596" y="56" width="184" height="80" rx="10" fill="#141b2e" stroke="#1f2940"/>
+    <text x="612" y="84" fill="#93a0b8" font-size="11">AVG. HANDLE TIME</text>
+    <text x="612" y="118" fill="#22d3ee" font-size="28" font-weight="800">-38%</text>
+  </g>
+
+  <!-- table -->
+  <rect x="20" y="152" width="760" height="328" rx="10" fill="#121a2c"/>
+  <text x="40" y="180" fill="#22d3ee" font-size="12" font-weight="700">INCOMING TICKETS — AI TRIAGE</text>
+  <g font-size="12">
+    <text x="40" y="208" fill="#93a0b8">TICKET</text>
+    <text x="150" y="208" fill="#93a0b8">SUMMARY</text>
+    <text x="520" y="208" fill="#93a0b8">CATEGORY</text>
+    <text x="700" y="208" fill="#93a0b8">CONF.</text>
+  </g>
+  <line x1="40" y1="218" x2="760" y2="218" stroke="#1f2940"/>
+
+  <g font-size="12">
+    <text x="40" y="246" fill="#e8ecf5">JSD-4821</text>
+    <text x="150" y="246" fill="#e8ecf5">Can’t log in after changing email</text>
+    <rect x="520" y="230" width="110" height="22" rx="11" fill="#6366f1" opacity="0.2"/>
+    <text x="575" y="246" fill="#a5a8ff" text-anchor="middle">Login issue</text>
+    <text x="700" y="246" fill="#34d399">0.97</text>
+
+    <text x="40" y="284" fill="#e8ecf5">JSD-4820</text>
+    <text x="150" y="284" fill="#e8ecf5">Requesting a copy of welcome letter</text>
+    <rect x="520" y="268" width="120" height="22" rx="11" fill="#22d3ee" opacity="0.15"/>
+    <text x="580" y="284" fill="#7ee7f7" text-anchor="middle">Welcome letter</text>
+    <text x="700" y="284" fill="#34d399">0.99</text>
+
+    <text x="40" y="322" fill="#e8ecf5">JSD-4818</text>
+    <text x="150" y="322" fill="#e8ecf5">Open Banking connection expired</text>
+    <rect x="520" y="306" width="100" height="22" rx="11" fill="#34d399" opacity="0.15"/>
+    <text x="570" y="322" fill="#34d399" text-anchor="middle">Reconnect</text>
+    <text x="700" y="322" fill="#34d399">0.95</text>
+
+    <text x="40" y="360" fill="#e8ecf5">JSD-4816</text>
+    <text x="150" y="360" fill="#e8ecf5">Question about settlement figure</text>
+    <rect x="520" y="344" width="110" height="22" rx="11" fill="#fbbf24" opacity="0.18"/>
+    <text x="575" y="360" fill="#fbbf24" text-anchor="middle">Needs agent</text>
+    <text x="700" y="360" fill="#fbbf24">0.61</text>
+
+    <text x="40" y="398" fill="#e8ecf5">JSD-4815</text>
+    <text x="150" y="398" fill="#e8ecf5">Direct debit shows as suppressed</text>
+    <rect x="520" y="382" width="115" height="22" rx="11" fill="#6366f1" opacity="0.2"/>
+    <text x="577" y="398" fill="#a5a8ff" text-anchor="middle">DD suppression</text>
+    <text x="700" y="398" fill="#34d399">0.93</text>
+  </g>
+
+  <rect x="40" y="424" width="180" height="34" rx="17" fill="#6366f1"/>
+  <text x="130" y="446" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">Process 11 eligible ⚡</text>
+</svg>

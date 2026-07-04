@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="800" height="500" rx="12" fill="#0f1524"/>
+  <rect width="800" height="36" rx="12" fill="#1a2338"/>
+  <rect y="24" width="800" height="12" fill="#1a2338"/>
+  <circle cx="22" cy="18" r="5" fill="#f87171"/><circle cx="40" cy="18" r="5" fill="#fbbf24"/><circle cx="58" cy="18" r="5" fill="#34d399"/>
+  <text x="400" y="23" fill="#93a0b8" font-size="12" text-anchor="middle">CTSD Agent — Ticket JSD-4821 · “Customer can’t log in”</text>
+
+  <!-- agent conversation -->
+  <rect x="20" y="56" width="480" height="424" rx="10" fill="#121a2c"/>
+  <text x="40" y="84" fill="#22d3ee" font-size="12" font-weight="700">AGENT REASONING</text>
+
+  <rect x="40" y="98" width="420" height="54" rx="10" fill="#141b2e" stroke="#1f2940"/>
+  <text x="56" y="120" fill="#e8ecf5" font-size="12">Ticket mentions a login failure after email change.</text>
+  <text x="56" y="138" fill="#e8ecf5" font-size="12">Checking the customer record and auth status…</text>
+
+  <rect x="40" y="164" width="300" height="30" rx="15" fill="#6366f1" opacity="0.18" stroke="#6366f1"/>
+  <text x="56" y="184" fill="#a5a8ff" font-size="12">🔧 tool: customers.find_by_email → 1 match</text>
+
+  <rect x="40" y="206" width="300" height="30" rx="15" fill="#6366f1" opacity="0.18" stroke="#6366f1"/>
+  <text x="56" y="226" fill="#a5a8ff" font-size="12">🔧 tool: auth.b2c_account_status → MISMATCH</text>
+
+  <rect x="40" y="248" width="420" height="70" rx="10" fill="#141b2e" stroke="#1f2940"/>
+  <text x="56" y="270" fill="#e8ecf5" font-size="12">Diagnosis: B2C identity email differs from the</text>
+  <text x="56" y="288" fill="#e8ecf5" font-size="12">customer record (scenario 3 of 6). Similar to 14</text>
+  <text x="56" y="306" fill="#e8ecf5" font-size="12">previously resolved tickets. Proposing a fix ↓</text>
+
+  <rect x="40" y="330" width="420" height="60" rx="10" fill="#0b0f1a" stroke="#22d3ee"/>
+  <text x="56" y="352" fill="#22d3ee" font-size="12" font-weight="700">PROPOSED ACTION (requires approval)</text>
+  <text x="56" y="372" fill="#e8ecf5" font-size="12">Update B2C sign-in email → match customer record</text>
+
+  <!-- RAG panel -->
+  <rect x="520" y="56" width="260" height="220" rx="10" fill="#121a2c"/>
+  <text x="540" y="84" fill="#22d3ee" font-size="12" font-weight="700">RAG CONTEXT</text>
+  <rect x="540" y="98" width="220" height="44" rx="8" fill="#141b2e" stroke="#1f2940"/>
+  <text x="552" y="116" fill="#e8ecf5" font-size="11">JSD-3907 · resolved</text>
+  <text x="552" y="132" fill="#93a0b8" font-size="10">“email mismatch after update…” · 0.91</text>
+  <rect x="540" y="150" width="220" height="44" rx="8" fill="#141b2e" stroke="#1f2940"/>
+  <text x="552" y="168" fill="#e8ecf5" font-size="11">auth/B2CLoginFlow.cs</text>
+  <text x="552" y="184" fill="#93a0b8" font-size="10">code chunk · 0.88</text>
+  <rect x="540" y="202" width="220" height="44" rx="8" fill="#141b2e" stroke="#1f2940"/>
+  <text x="552" y="220" fill="#e8ecf5" font-size="11">JSD-4102 · resolved</text>
+  <text x="552" y="236" fill="#93a0b8" font-size="10">“cannot sign in, changed email” · 0.86</text>
+
+  <!-- approval -->
+  <rect x="520" y="292" width="260" height="188" rx="10" fill="#121a2c"/>
+  <text x="540" y="320" fill="#22d3ee" font-size="12" font-weight="700">HUMAN IN THE LOOP</text>
+  <text x="540" y="344" fill="#93a0b8" font-size="11">Step 3 of 3 — mutation gated</text>
+  <rect x="540" y="360" width="105" height="34" rx="17" fill="#34d399"/>
+  <text x="592" y="382" fill="#0b0f1a" font-size="13" text-anchor="middle" font-weight="700">Approve</text>
+  <rect x="655" y="360" width="105" height="34" rx="17" fill="none" stroke="#f87171"/>
+  <text x="707" y="382" fill="#f87171" font-size="13" text-anchor="middle" font-weight="700">Reject</text>
+  <text x="540" y="424" fill="#93a0b8" font-size="11">✓ investigate — auto</text>
+  <text x="540" y="444" fill="#93a0b8" font-size="11">✓ diagnose — auto</text>
+  <text x="540" y="464" fill="#fbbf24" font-size="11">⏳ apply fix — awaiting approval</text>
+</svg>

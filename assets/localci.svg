@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Consolas, monospace">
+  <rect width="800" height="500" rx="12" fill="#0b0f1a"/>
+  <rect width="800" height="36" rx="12" fill="#1a2338"/>
+  <rect y="24" width="800" height="12" fill="#1a2338"/>
+  <circle cx="22" cy="18" r="5" fill="#f87171"/><circle cx="40" cy="18" r="5" fill="#fbbf24"/><circle cx="58" cy="18" r="5" fill="#34d399"/>
+  <text x="400" y="23" fill="#93a0b8" font-size="12" text-anchor="middle" font-family="Segoe UI, Arial">LocalCI + Octopus Deployer — terminal</text>
+
+  <g font-size="13">
+    <text x="30" y="72" fill="#34d399">$</text>
+    <text x="48" y="72" fill="#e8ecf5">python auto_build_push.py --service paymentplansservice</text>
+
+    <text x="30" y="100" fill="#93a0b8">→ detected .csproj · version 1.4 · branch feature/vrp-consent</text>
+    <text x="30" y="124" fill="#93a0b8">→ tag derived from commits: 1.4.483-vrp-consent</text>
+
+    <text x="30" y="156" fill="#e8ecf5">[docker] building image…</text>
+    <text x="30" y="180" fill="#93a0b8">  =&gt; [4/9] RUN dotnet restore                    2.1s</text>
+    <text x="30" y="204" fill="#93a0b8">  =&gt; [7/9] RUN dotnet publish -c Release         38.4s</text>
+    <text x="30" y="228" fill="#34d399">  ✓ image built: paymentplansservice:1.4.483-vrp-consent</text>
+
+    <text x="30" y="260" fill="#e8ecf5">[gcr] pushing image…</text>
+    <text x="30" y="284" fill="#34d399">  ✓ pushed · digest sha256:9f2c…a41</text>
+    <text x="30" y="308" fill="#e8ecf5">[helm] packaging chart…</text>
+    <text x="30" y="332" fill="#34d399">  ✓ chart 1.4.483 pushed to repo</text>
+
+    <text x="30" y="372" fill="#34d399">$</text>
+    <text x="48" y="372" fill="#e8ecf5">python deploy.py paymentplans --env dev01</text>
+    <text x="30" y="400" fill="#93a0b8">→ matched release 1.4.483-vrp-consent · deploying to dev01</text>
+    <text x="30" y="424" fill="#fbbf24">⠹ Step 2/3 — applying Kubernetes manifests…</text>
+    <text x="30" y="452" fill="#34d399">✓ deployment SUCCESS in 1m 42s</text>
+  </g>
+</svg>
