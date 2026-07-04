@@ -92,6 +92,25 @@ const PROJECTS = {
     ],
     stack: ["C# / .NET Core", "React.js", "TypeScript", "SignalR", "WebSockets", "WhatsApp Business API", "OpenAI API", "Ollama", "MongoDB", "GCP storage", "Docker", "CI/CD"],
   },
+  chatbot: {
+    title: "Production AI Chatbot",
+    badge: "Professional",
+    img: "assets/chatbot.svg",
+    imgAlt: "AI chatbot console with intent pipeline and handoff — representative mockup",
+    role: "The AI layer of the WhatsApp platform · live in production with real customers",
+    sections: [
+      { h: "The problem", p: "A two-way WhatsApp channel is only useful if someone answers instantly — but staffing it around the clock doesn't scale. The chatbot had to handle real customer queries safely, in a regulated lending context, from day one." },
+      { h: "What I built", list: [
+        "An OpenAI-powered chatbot integrated into the WhatsApp messenger service, answering account queries (balances, payment dates, changes) with customer context",
+        "Intent detection with confidence thresholds — low-confidence or sensitive intents route straight to a human",
+        "Guardrails for vulnerable customers: financial-difficulty signals always trigger agent handoff, never automated advice",
+        "Seamless mid-conversation handoff to live agents in the servicing hub (SignalR), with the full transcript in view",
+        "Logging, analytics and monitoring so every AI response is auditable",
+      ]},
+      { h: "Why it matters", p: "This is AI in production with real customers — not a demo. The design assumes the model will sometimes be unsure, and makes that a safe, boring event: a human simply takes over. See the WhatsApp Customer Platform case study for the platform it lives in." },
+    ],
+    stack: ["OpenAI API", "C# / .NET Core", "Prompt engineering", "Intent classification", "SignalR", "WhatsApp Business API", "MongoDB", "Monitoring & audit logging"],
+  },
   journey: {
     title: "Loan Application Journey",
     badge: "Professional",
@@ -143,6 +162,25 @@ const PROJECTS = {
       ]},
     ],
     stack: ["Python", "Docker", "GCR + gcloud", "Helm", ".NET SDK", "Octopus Deploy API", "AppVeyor API", "Azure DevOps NuGet feeds"],
+  },
+  sports: {
+    title: "High-Traffic Sports Platforms",
+    badge: "Professional",
+    img: "assets/sports.svg",
+    imgAlt: "Live sports timing dashboard at 2.4M concurrent users — representative mockup",
+    role: "Backend Developer at Sportz Interactive (Jul 2023 – Sep 2025) · clients including F1, UEFA and FEI",
+    sections: [
+      { h: "The problem", p: "Live sports traffic is brutal: millions of fans hit the same endpoints at the same second — lights out, kick-off, a goal. The platforms had to stay fast and correct through 2–3 million concurrent users." },
+      { h: "What I did", list: [
+        "Built and maintained backend systems in .NET Core with PostgreSQL, Redis and AWS for global sports clients including F1, UEFA and FEI",
+        "Designed REST APIs that held 2–3 million concurrent users with low latency",
+        "Optimised query plans, indexing strategies and caching layers — the difference between a smooth match day and an outage",
+        "Ran the platforms on AWS (EC2, S3, RDS, CloudWatch) with monitoring and scaling",
+        "Handled production incidents and root-cause analysis under live-event pressure; contributed to system-design decisions",
+      ]},
+      { h: "Why it matters", p: "Two years of this is where my performance instincts come from — cache-first thinking, index discipline, and calm incident response — habits I carried into fintech." },
+    ],
+    stack: ["C# / .NET Core", "PostgreSQL", "Redis", "AWS EC2 · S3 · RDS", "CloudWatch", "REST API design", "Caching & indexing", "Incident response"],
   },
   shooter: {
     title: "Space Shooter",
