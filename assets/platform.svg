@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="800" height="500" rx="12" fill="#0f1524"/>
+  <rect width="800" height="36" rx="12" fill="#1a2338"/>
+  <rect y="24" width="800" height="12" fill="#1a2338"/>
+  <circle cx="22" cy="18" r="5" fill="#f87171"/><circle cx="40" cy="18" r="5" fill="#fbbf24"/><circle cx="58" cy="18" r="5" fill="#34d399"/>
+  <text x="400" y="23" fill="#93a0b8" font-size="12" text-anchor="middle">Platform Engineering — Service Mesh · Observability · Artifacts</text>
+
+  <!-- istio policy -->
+  <rect x="20" y="56" width="380" height="230" rx="10" fill="#121a2c"/>
+  <text x="40" y="84" fill="#22d3ee" font-size="12" font-weight="700">ISTIO AUTHORIZATION POLICY</text>
+  <rect x="40" y="98" width="340" height="150" rx="8" fill="#0b0f1a" stroke="#1f2940"/>
+  <g font-family="Consolas, monospace" font-size="11">
+    <text x="54" y="120" fill="#c084fc">kind:</text><text x="100" y="120" fill="#e8ecf5">AuthorizationPolicy</text>
+    <text x="54" y="140" fill="#c084fc">rules:</text>
+    <text x="70" y="160" fill="#93a0b8">- to: paths:</text>
+    <text x="100" y="180" fill="#f87171">- /referrals/approveandclose*   # suffix — never matched</text>
+    <text x="100" y="200" fill="#34d399">- /referrals/approveandclose/*  # prefix — fixed ✓</text>
+    <text x="54" y="228" fill="#93a0b8"># 403 "RBAC: access denied" → resolved</text>
+  </g>
+  <text x="40" y="270" fill="#93a0b8" font-size="11">deny-all default · allow-health · allow-internal · new namespace onboarding</text>
+
+  <!-- otel trace -->
+  <rect x="20" y="302" width="380" height="178" rx="10" fill="#121a2c"/>
+  <text x="40" y="330" fill="#22d3ee" font-size="12" font-weight="700">OPENTELEMETRY TRACE — decision service</text>
+  <g font-size="11">
+    <rect x="40" y="344" width="300" height="16" rx="4" fill="#6366f1" opacity="0.8"/>
+    <text x="48" y="356" fill="#fff" font-size="10">POST /decisions · 412ms</text>
+    <rect x="70" y="366" width="180" height="16" rx="4" fill="#22d3ee" opacity="0.7"/>
+    <text x="78" y="378" fill="#0b0f1a" font-size="10">rules evaluation · 226ms</text>
+    <rect x="70" y="388" width="120" height="16" rx="4" fill="#34d399" opacity="0.7"/>
+    <text x="78" y="400" fill="#0b0f1a" font-size="10">bureau data fetch · 148ms</text>
+    <rect x="200" y="410" width="90" height="16" rx="4" fill="#fbbf24" opacity="0.7"/>
+    <text x="208" y="422" fill="#0b0f1a" font-size="10">persist · 61ms</text>
+  </g>
+  <text x="40" y="452" fill="#93a0b8" font-size="10">CLR-profiler agent → segfaults → clean SDK pipeline in Startup.cs (traces + metrics, OTLP)</text>
+
+  <!-- artifacts migration -->
+  <rect x="420" y="56" width="360" height="424" rx="10" fill="#121a2c"/>
+  <text x="440" y="84" fill="#22d3ee" font-size="12" font-weight="700">ARTIFACT PIPELINE MIGRATION</text>
+
+  <rect x="440" y="100" width="320" height="70" rx="8" fill="#141b2e" stroke="#f87171"/>
+  <text x="456" y="124" fill="#f87171" font-size="12" font-weight="700">MyGet (deprecated)</text>
+  <text x="456" y="144" fill="#93a0b8" font-size="11">legacy NuGet feed · env-var config</text>
+  <text x="456" y="160" fill="#93a0b8" font-size="11">scattered across build scripts</text>
+
+  <text x="600" y="196" fill="#6366f1" font-size="20" text-anchor="middle">↓</text>
+
+  <rect x="440" y="212" width="320" height="70" rx="8" fill="#141b2e" stroke="#34d399"/>
+  <text x="456" y="236" fill="#34d399" font-size="12" font-weight="700">Azure Artifacts ✓</text>
+  <text x="456" y="256" fill="#93a0b8" font-size="11">NuGet sources wired into install-foreman;</text>
+  <text x="456" y="272" fill="#93a0b8" font-size="11">nupkg push on successful builds</text>
+
+  <text x="440" y="316" fill="#22d3ee" font-size="12" font-weight="700">ALSO IN THIS SPACE</text>
+  <g font-size="11">
+    <rect x="440" y="330" width="320" height="34" rx="8" fill="#141b2e"/>
+    <text x="456" y="352" fill="#e8ecf5">🕸 utilityservice namespace onboarded to mesh</text>
+    <rect x="440" y="370" width="320" height="34" rx="8" fill="#141b2e"/>
+    <text x="456" y="392" fill="#e8ecf5">🔐 x-auth-key + Istio policy for system callers</text>
+    <rect x="440" y="410" width="320" height="34" rx="8" fill="#141b2e"/>
+    <text x="456" y="432" fill="#e8ecf5">📡 correlation/caller identity from workers</text>
+  </g>
+  <text x="440" y="468" fill="#93a0b8" font-size="10">Istio · OpenTelemetry · Kubernetes · Helm · Azure DevOps</text>
+</svg>

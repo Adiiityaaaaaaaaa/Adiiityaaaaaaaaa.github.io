@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="800" height="500" rx="12" fill="#0f1524"/>
+  <rect width="800" height="36" rx="12" fill="#1a2338"/>
+  <rect y="24" width="800" height="12" fill="#1a2338"/>
+  <circle cx="22" cy="18" r="5" fill="#f87171"/><circle cx="40" cy="18" r="5" fill="#fbbf24"/><circle cx="58" cy="18" r="5" fill="#34d399"/>
+  <text x="400" y="23" fill="#93a0b8" font-size="12" text-anchor="middle">Servicing Hub — Bulk Actions</text>
+
+  <!-- tabs -->
+  <g font-size="11">
+    <rect x="20" y="52" width="92" height="26" rx="13" fill="#6366f1"/>
+    <text x="66" y="69" fill="#fff" text-anchor="middle" font-weight="700">Post Notes</text>
+    <text x="140" y="69" fill="#93a0b8">Write-Off</text>
+    <text x="216" y="69" fill="#93a0b8">Tertiary</text>
+    <text x="282" y="69" fill="#93a0b8">DD Suppress</text>
+    <text x="372" y="69" fill="#93a0b8">Unsuppress</text>
+    <text x="458" y="69" fill="#93a0b8">Settlement</text>
+    <text x="540" y="69" fill="#93a0b8">Arrears</text>
+    <text x="606" y="69" fill="#93a0b8">Disbursal Delay</text>
+  </g>
+
+  <!-- upload + job status -->
+  <rect x="20" y="92" width="360 " height="120" rx="10" fill="#121a2c"/>
+  <rect x="36" y="108" width="328" height="56" rx="8" fill="#0b0f1a" stroke="#6366f1" stroke-dasharray="5 4"/>
+  <text x="200" y="132" fill="#93a0b8" font-size="12" text-anchor="middle">📄 agreements_july.xlsx · 2,340 rows</text>
+  <text x="200" y="152" fill="#22d3ee" font-size="11" text-anchor="middle">uploaded · job queued as 202 + jobId</text>
+  <rect x="36" y="174" width="130" height="28" rx="14" fill="#6366f1"/>
+  <text x="101" y="193" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">Run bulk action</text>
+
+  <rect x="400" y="92" width="380" height="120" rx="10" fill="#121a2c"/>
+  <text x="420" y="118" fill="#22d3ee" font-size="12" font-weight="700">JOB a41f…9c — RUNNING</text>
+  <rect x="420" y="132" width="340" height="10" rx="5" fill="#1f2940"/>
+  <rect x="420" y="132" width="238" height="10" rx="5" fill="#34d399"/>
+  <text x="420" y="164" fill="#e8ecf5" font-size="12">1,638 / 2,340 processed · polling every 2s</text>
+  <text x="420" y="188" fill="#93a0b8" font-size="11">drain worker · bounded parallelism · Mongo-queued</text>
+
+  <!-- results table -->
+  <rect x="20" y="228" width="760" height="252" rx="10" fill="#121a2c"/>
+  <text x="40" y="256" fill="#22d3ee" font-size="12" font-weight="700">PER-AGREEMENT RESULTS (live)</text>
+  <g font-size="12">
+    <text x="40" y="284" fill="#93a0b8">AGREEMENT</text>
+    <text x="220" y="284" fill="#93a0b8">ACTION</text>
+    <text x="440" y="284" fill="#93a0b8">RESULT</text>
+    <text x="580" y="284" fill="#93a0b8">DETAIL</text>
+  </g>
+  <line x1="40" y1="294" x2="760" y2="294" stroke="#1f2940"/>
+  <g font-size="12">
+    <text x="40" y="322" fill="#e8ecf5" font-family="Consolas, monospace">AGR-104829</text>
+    <text x="220" y="322" fill="#e8ecf5">Post note</text>
+    <text x="440" y="322" fill="#34d399">✓ success</text>
+    <text x="580" y="322" fill="#93a0b8">note id 8841</text>
+
+    <text x="40" y="352" fill="#e8ecf5" font-family="Consolas, monospace">AGR-104830</text>
+    <text x="220" y="352" fill="#e8ecf5">DD suppression</text>
+    <text x="440" y="352" fill="#34d399">✓ success</text>
+    <text x="580" y="352" fill="#93a0b8">suppressed 30d</text>
+
+    <text x="40" y="382" fill="#e8ecf5" font-family="Consolas, monospace">AGR-104831</text>
+    <text x="220" y="382" fill="#e8ecf5">Write-off / debt sale</text>
+    <text x="440" y="382" fill="#f87171">✗ failed</text>
+    <text x="580" y="382" fill="#93a0b8">frozen interest</text>
+
+    <text x="40" y="412" fill="#e8ecf5" font-family="Consolas, monospace">AGR-104832</text>
+    <text x="220" y="412" fill="#e8ecf5">Reduce arrears</text>
+    <text x="440" y="412" fill="#34d399">✓ success</text>
+    <text x="580" y="412" fill="#93a0b8">£210.00 → £0.00</text>
+
+    <text x="40" y="442" fill="#e8ecf5" font-family="Consolas, monospace">AGR-104833</text>
+    <text x="220" y="442" fill="#e8ecf5">Approve disbursal delay</text>
+    <text x="440" y="442" fill="#fbbf24">⟳ running</text>
+    <text x="580" y="442" fill="#93a0b8">via referrals svc</text>
+  </g>
+  <text x="40" y="470" fill="#93a0b8" font-size="10">On completion: submitter emailed a success/total tally with per-agreement results.</text>
+</svg>

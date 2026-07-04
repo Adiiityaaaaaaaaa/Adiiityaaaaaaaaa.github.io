@@ -50,7 +50,7 @@
       <div class="hero-stats reveal">
         <div class="stat"><span class="stat-num" data-count="2.5" data-suffix="+">0</span><span class="stat-label">years shipping production systems</span></div>
         <div class="stat"><span class="stat-num" data-count="3" data-suffix="M">0</span><span class="stat-label">concurrent users served at peak</span></div>
-        <div class="stat"><span class="stat-num" data-count="11" data-suffix="">0</span><span class="stat-label">case studies on this site</span></div>
+        <div class="stat"><span class="stat-num" data-count="15" data-suffix="">0</span><span class="stat-label">case studies on this site</span></div>
         <div class="stat"><span class="stat-num">🏆</span><span class="stat-label">Employee of the Month, Oakbrook</span></div>
       </div>
       <ul class="hero-chips reveal" aria-label="Core technologies">
@@ -122,7 +122,7 @@
               <span class="arc-step-label">SequensisCI</span>
               <p>Self-hosted CI platform: containerised builds, live log streaming,
                  artifact publishing, and its own MCP server — used across the team.</p>
-              <span class="arc-tech">Blazor Server · CQRS/DDD · MongoDB</span>
+              <span class="arc-tech">.NET build engine · React SPA · MongoDB</span>
             </div>
           </div>
         </div>
@@ -134,7 +134,8 @@
       <div class="container">
         <h2 class="section-title reveal">Projects</h2>
         <p class="section-sub reveal">
-          Professional projects are proprietary, so they're presented as case studies.
+          Professional projects are proprietary, so they're presented as case studies —
+          the details below come from 1,200+ of my commits across 20+ services.
           Click any card for the full story. <em>UI previews are representative
           mockups — the real screens (and their data) stay private.</em>
         </p>
@@ -157,9 +158,9 @@
               <h3>SequensisCI</h3>
               <span class="badge badge-work">Professional</span>
             </div>
-            <p class="card-lead">Self-hosted CI/CD platform that replaced slow hosted builds for a whole engineering team.</p>
+            <p class="card-lead">Self-hosted CI/CD platform — 200+ commits, built from scratch to replace hosted CI for a whole engineering team.</p>
             <div class="chips">
-              <span>C# / .NET</span><span>Blazor Server</span><span>CQRS · DDD</span><span>MongoDB</span><span>Docker</span><span>Helm</span><span>MCP</span>
+              <span>C# / .NET</span><span>React · Vite</span><span>SSE live logs</span><span>MongoDB</span><span>Docker · BuildKit</span><span>Helm</span><span>Entra SSO</span><span>MCP</span>
             </div>
             <button class="card-more" data-open="sequensisci">Full case study →</button>
           </article>
@@ -224,6 +225,36 @@
             <button class="card-more" data-open="whatsapp">Full case study →</button>
           </article>
 
+          <article class="card reveal" data-tags="product" data-project="gocardless">
+            <button class="card-shot" data-open="gocardless" aria-label="Open GoCardless integration case study">
+              <img src="assets/gocardless.svg" alt="Direct-debit webhook processing and bulk mandate import — representative mockup" loading="lazy" />
+            </button>
+            <div class="card-top">
+              <h3>Direct Debit at Scale (GoCardless)</h3>
+              <span class="badge badge-work">Professional</span>
+            </div>
+            <p class="card-lead">Event-driven GoCardless integration: HMAC-verified webhooks driving mandate/payment lifecycles, plus a bulk import pipeline for thousands of mandates.</p>
+            <div class="chips">
+              <span>C# / .NET</span><span>CQRS + domain events</span><span>HMAC-SHA256</span><span>Hangfire</span><span>Pub/Sub</span><span>MongoDB</span>
+            </div>
+            <button class="card-more" data-open="gocardless">Full case study →</button>
+          </article>
+
+          <article class="card reveal" data-tags="platform product" data-project="bulkactions">
+            <button class="card-shot" data-open="bulkactions" aria-label="Open Icenet bulk actions case study">
+              <img src="assets/bulkactions.svg" alt="Bulk actions job screen with live per-agreement results — representative mockup" loading="lazy" />
+            </button>
+            <div class="card-top">
+              <h3>Icenet Bulk Actions Platform</h3>
+              <span class="badge badge-work">Professional</span>
+            </div>
+            <p class="card-lead">Async job engine that turns a spreadsheet of agreements into thousands of back-office operations — spanning four services, from React UI to Istio policy.</p>
+            <div class="chips">
+              <span>C# / .NET</span><span>Async job queue</span><span>React · TS</span><span>CsvHelper · ClosedXML</span><span>Istio</span><span>MongoDB</span>
+            </div>
+            <button class="card-more" data-open="bulkactions">Full case study →</button>
+          </article>
+
           <article class="card reveal" data-tags="ai product" data-project="chatbot">
             <button class="card-shot" data-open="chatbot" aria-label="Open AI chatbot case study">
               <img src="assets/chatbot.svg" alt="AI chatbot console with intent pipeline and handoff — representative mockup" loading="lazy" />
@@ -282,6 +313,36 @@
               <span>Python</span><span>Docker</span><span>GCR</span><span>Helm</span><span>Octopus Deploy</span><span>Kubernetes</span>
             </div>
             <button class="card-more" data-open="localci">Full case study →</button>
+          </article>
+
+          <article class="card reveal" data-tags="platform" data-project="utility">
+            <button class="card-shot" data-open="utility" aria-label="Open UtilityService case study">
+              <img src="assets/utility.svg" alt="UtilityService link shortener and re-architecture phases — representative mockup" loading="lazy" />
+            </button>
+            <div class="card-top">
+              <h3>UtilityService + Link Shortener</h3>
+              <span class="badge badge-work">Professional</span>
+            </div>
+            <p class="card-lead">A production .NET 8 microservice founded solo — including a URL shortener shipped end-to-end in a single day — then re-architected through four phases to platform standard.</p>
+            <div class="chips">
+              <span>.NET 8</span><span>CQRS + MediatR</span><span>MongoDB</span><span>Google Pub/Sub</span><span>Istio mesh auth</span><span>Helm</span>
+            </div>
+            <button class="card-more" data-open="utility">Full case study →</button>
+          </article>
+
+          <article class="card reveal" data-tags="platform" data-project="platform">
+            <button class="card-shot" data-open="platform" aria-label="Open platform engineering case study">
+              <img src="assets/platform.svg" alt="Istio policy, OpenTelemetry trace and artifact migration — representative mockup" loading="lazy" />
+            </button>
+            <div class="card-top">
+              <h3>Mesh, Observability &amp; Pipelines</h3>
+              <span class="badge badge-work">Professional</span>
+            </div>
+            <p class="card-lead">The platform work between the features: Istio authorization policies, an OpenTelemetry migration, and moving artifact publishing to Azure Artifacts.</p>
+            <div class="chips">
+              <span>Istio</span><span>OpenTelemetry</span><span>Kubernetes · Helm</span><span>Azure Artifacts</span><span>.NET</span>
+            </div>
+            <button class="card-more" data-open="platform">Full case study →</button>
           </article>
 
           <article class="card reveal" data-tags="platform product" data-project="sports">
